@@ -217,8 +217,6 @@ void SW() {
 }
 
 void dealCards(struct node* headerDeck) {
-
-
     int row = 1;
     struct node *tempNextHolder;
     struct node *temp = headerDeck;
@@ -240,7 +238,7 @@ void dealCards(struct node* headerDeck) {
 
                 //printf("CHECK - Value: %c | Suit: %c is Header for Collumn %d\n", tempNextHolder->value,
                 //tempNextHolder->suits, row);
-                printf("%c%c\t",tempNextHolder->value,tempNextHolder->suits);
+                //printf("%c%c\t",tempNextHolder->value,tempNextHolder->suits);
 
 
 
@@ -257,7 +255,7 @@ void dealCards(struct node* headerDeck) {
                 //tempNextHolder->value, tempNextHolder->suits, tempNextHolder->prev->value,
                 //tempNextHolder->prev->suits, row);
 
-                printf("%c%c\t",tempNextHolder->value,tempNextHolder->suits);
+                //printf("%c%c\t",tempNextHolder->value,tempNextHolder->suits);
             }
 
 
@@ -284,9 +282,9 @@ void SD(char file[], char *cardDeck) {
     fclose(filePointer);
 }
 
-void printfun(){
+void printPLAY(){
     dealCards(head);
-    printf("\n\n\n\n\n");
+    printf("\n");
     printf("C1\tC2\tC3\tC4\tC5\tC6\tC7\n");
 
     //Linje 1 START
@@ -624,7 +622,6 @@ void userInput() {
         case 'S':
         case 's':
             if ((input[0] == 'S' || input[0] == 's') && (input[1] == 'W' || input[1] == 'w')) {
-           /* if (input[1] == 'W' || input[1] == 'w') {*/
                 message[0] = 'O';
                 message[1] = 'K';
                 SW();
@@ -653,10 +650,10 @@ void userInput() {
 
         case 'P':
         case 'p':
-            if ((input[0] == 'P' || input[0] == 'p') && (input[1] == 'P' || input[1] == 'p')) {
+            if ((input[0] == 'P' || input[0] == 'p')) {
                 message[0] = 'O';
                 message[1] = 'K';
-                printfun();
+                printPLAY();
                 break;
             } else if (input[1] == '\0') {
                 break;
